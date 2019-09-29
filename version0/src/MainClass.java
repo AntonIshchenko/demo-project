@@ -7,6 +7,7 @@ public class MainClass {
 
     public static void main(String[] args) {
         List<String> fullData = new ArrayList<>();
+        List<Copybook> cpyBooks = new ArrayList<>();
         String row = "";
 
         try(LineNumberReader reader =new LineNumberReader(new BufferedReader(new FileReader("test.txt"))) ){
@@ -21,7 +22,8 @@ public class MainClass {
         }
 
         for (String d:fullData) {
-            System.out.println(d);
+            CopybookParser.parseCopybook(d);
+
         }
 
     }
