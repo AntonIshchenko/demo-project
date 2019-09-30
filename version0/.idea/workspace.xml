@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4601e80c-8ce5-42b0-acf1-839d491b6f14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/version0/Copybook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version0/Copybook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/version0/CopybookParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version0/CopybookParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/version0/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/version0/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CopybookParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CopybookParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClass.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,8 +94,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MainClass.java</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MainClass.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

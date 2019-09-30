@@ -56,6 +56,9 @@ public class CopybookParser {
     public static Integer parseDataLen(Scanner scan) {
         if (scan.hasNext() && !endOfLine) {
             String type = scan.next();
+            if (type.contains("."))
+                endOfLine = true;
+            computeLength(type.substring(0, type.length() - 1));
             System.out.println(type);
         } else {
 
@@ -63,7 +66,19 @@ public class CopybookParser {
         return 0;
     }
 
+    private static Integer computeLength(String str){
+
+        return 0;
+    }
 }
 
+enum pictureClause {
+    NUMERIC,
+    ALPHABETIC,
+    ALPHANUMERIC,
+    IMPLICITDECIMAL,
+    SIGN,
+    ASSUMEDDECIMAL,
+}
 
 

@@ -21,6 +21,7 @@ public class MainClass {
             System.out.println(e.getMessage());
         }
 
+
         for (String d:fullData) {
             CopybookParser.parseCopybook(d);
         }
