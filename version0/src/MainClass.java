@@ -23,8 +23,6 @@ public class MainClass {
 
         for (String d:fullData) {
             CopybookParser.parseCopybook(d);
-
         }
-
     }
 }
