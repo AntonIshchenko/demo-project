@@ -12,12 +12,14 @@ public class CopybookParser {
 
     public static void parseCopybook(String line) {
         endOfLine = false;
+        copybook = new Copybook();
         Scanner scan = new Scanner(line);
         Copybook cpy = new Copybook();
         parseLevel(scan);
         parseType(scan);
         parseDataType(scan);
         parseDataLen(scan);
+        copyBooks.add(copybook);
     }
 
     public static Integer parseLevel(Scanner scan) {
@@ -33,9 +35,11 @@ public class CopybookParser {
     public static String parseType(Scanner scan) {
         if (scan.hasNext() && !endOfLine) {
             String type = scan.next();
-            if (type.contains("."))
+            if (type.contains(".")) {
+                copybook.setDataName(type.substring(0, type.length() - 1));
                 endOfLine = true;
-            copybook.setDataName(type.substring(0, type.length() - 1));
+            } else
+                copybook.setDataName(type);
             return type;
         } else {
             endOfLine = true;
@@ -56,9 +60,11 @@ public class CopybookParser {
     public static Integer parseDataLen(Scanner scan) {
         if (scan.hasNext() && !endOfLine) {
             String type = scan.next();
-            if (type.contains("."))
+            if (type.contains(".")) {
+                copybook.setValueLength(computeLength(type.substring(0, type.length() - 1)));
                 endOfLine = true;
-            copybook.setValueLength(computeLength(type.substring(0, type.length() - 1)));
+            } else
+                copybook.setValueLength(computeLength(type));
             return copybook.getValueLength();
         } else {
             return -1;
@@ -88,7 +94,7 @@ public class CopybookParser {
                     addict += 1; //??????
                     break;
                 case "9":
-                    multiplexor = 2; // ???
+                    multiplexor = multiplexor >= 2 ? multiplexor : 2; // ???
                     break;
                 case "(":
                     totalLength += Integer.parseInt(str.substring(i+1,str.indexOf(")")));

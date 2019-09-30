@@ -24,7 +24,9 @@ public class MainClass {
         int  as  = Integer.parseInt("99");
         System.out.println(as);
         for (String d:fullData) {
+            System.out.print(d + " result here:   ");
             CopybookParser.parseCopybook(d);
+            System.out.println(CopybookParser.copybook.getDataType() + " " + CopybookParser.copybook.getValueLength());
         }
     }
 }
