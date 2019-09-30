@@ -73,10 +73,10 @@ public class CopybookParser {
             String currentSymbol = str.substring(i,i+1);
             switch (currentSymbol) {
                 case "A":
-                    multiplexor += 4; //?????????
+                    multiplexor = 4; //?????????
                     break;
                 case "X":
-                    multiplexor += 4; //?????????
+                    multiplexor = 4; //?????????
                     break;
                 case "V":
                     addict += 1;
@@ -88,17 +88,16 @@ public class CopybookParser {
                     addict += 1; //??????
                     break;
                 case "9":
-                    multiplexor += 2; // ???
+                    multiplexor = 2; // ???
                     break;
                 case "(":
                     totalLength += Integer.parseInt(str.substring(i+1,str.indexOf(")")));
                     break;
                 default:
             }
-            totalLength *= multiplexor;
-            totalLength += addict;
         }
-
+        totalLength *= multiplexor;
+        totalLength += addict;
         return totalLength;
     }
 }
