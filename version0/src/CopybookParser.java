@@ -22,8 +22,8 @@ public class CopybookParser {
 
     public static Integer parseLevel(Scanner scan) {
         if(scan.hasNext() && !endOfLine) {
-            copybook.setLevel(scan.nextInt());
-            return copybook.getLevel();
+            copybook.setLevelNumber(scan.nextInt());
+            return copybook.getLevelNumber();
         } else {
             endOfLine = true;
             return -1;
@@ -35,7 +35,7 @@ public class CopybookParser {
             String type = scan.next();
             if (type.contains("."))
                 endOfLine = true;
-            copybook.setTypeName(type.substring(0, type.length() - 1));
+            copybook.setDataName(type.substring(0, type.length() - 1));
             return type;
         } else {
             endOfLine = true;

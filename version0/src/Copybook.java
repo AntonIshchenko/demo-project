@@ -1,37 +1,37 @@
 public class Copybook {
-    private int level;
-    private String typeName;
+    private int levelNumber;
+    private String dataName;
     private String dataType;
     private int valueLength;
     private String valueType;
 
     Copybook() {}
 
-    Copybook(int level, String typeName, String dataType, int valueLength, String valueType){
-        this.level = level;
-        this.typeName = typeName;
+    Copybook(int levelNumber, String dataName, String dataType, int valueLength, String valueType){
+        this.levelNumber = levelNumber;
+        this.dataName = dataName;
         this.dataType = dataType;
         this.valueLength = valueLength;
         this.valueType = valueType;
     }
 
 
-    public int getLevel() {
-        return level;
+    public int getLevelNumber() {
+        return levelNumber;
     }
 
-    public void setLevel(int level) {
-        if(this.level == 0)
-            this.level = level;
+    public void setLevelNumber(int levelNumber) {
+        if(this.levelNumber == 0)
+            this.levelNumber = levelNumber;
     }
 
-    public String getTypeName() {
-        return typeName;
+    public String getDataName() {
+        return dataName;
     }
 
-    public void setTypeName(String typeName) {
-        if(this.typeName == null)
-            this.typeName = typeName;
+    public void setDataName(String dataName) {
+        if(this.dataName == null)
+            this.dataName = dataName;
     }
 
     public String getDataType() {
