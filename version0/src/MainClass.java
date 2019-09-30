@@ -21,7 +21,8 @@ public class MainClass {
             System.out.println(e.getMessage());
         }
 
-
+        int  as  = Integer.parseInt("99");
+        System.out.println(as);
         for (String d:fullData) {
             CopybookParser.parseCopybook(d);
         }

@@ -58,27 +58,51 @@ public class CopybookParser {
             String type = scan.next();
             if (type.contains("."))
                 endOfLine = true;
-            computeLength(type.substring(0, type.length() - 1));
-            System.out.println(type);
+            copybook.setValueLength(computeLength(type.substring(0, type.length() - 1)));
+            return copybook.getValueLength();
         } else {
-
+            return -1;
         }
-        return 0;
     }
 
     private static Integer computeLength(String str){
+        int totalLength = 0;
+        int multiplexor = 1;
+        int addict = 0;
+        for (int i = 0; i < str.length(); i++) {
+            String currentSymbol = str.substring(i,i+1);
+            switch (currentSymbol) {
+                case "A":
+                    multiplexor += 4; //?????????
+                    break;
+                case "X":
+                    multiplexor += 4; //?????????
+                    break;
+                case "V":
+                    addict += 1;
+                    break;
+                case "S":
+                    addict += 1;
+                    break;
+                case "P":
+                    addict += 1; //??????
+                    break;
+                case "9":
+                    multiplexor += 2; // ???
+                    break;
+                case "(":
+                    totalLength += Integer.parseInt(str.substring(i+1,str.indexOf(")")));
+                    break;
+                default:
+            }
+            totalLength *= multiplexor;
+            totalLength += addict;
+        }
 
-        return 0;
+        return totalLength;
     }
 }
 
-enum pictureClause {
-    NUMERIC,
-    ALPHABETIC,
-    ALPHANUMERIC,
-    IMPLICITDECIMAL,
-    SIGN,
-    ASSUMEDDECIMAL,
-}
+
 
 
